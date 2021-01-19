@@ -9,8 +9,6 @@ class PagesController extends Controller
     //首页
     public function root()
     {
-        $title = '';
-        $description = '';
-        return view('pages.root',compact('title','description'));
+        return view('pages.root');
     }
 }
