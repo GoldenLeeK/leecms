@@ -30,4 +30,5 @@ Route::post('admin/login', 'Admin\LoginController@login');
 Route::get('admin/register', 'Admin\RegisterController@showRegistrationForm')->name('admin.register');
 Route::post('admin/register', 'Admin\RegisterController@register');
 Route::post('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
-Route::get('admin', 'AdminController@index')->name('admin.home');
+Route::get('admin', 'Admin\AdminController@index')->name('admin.home');
+Route::get('admin/index', 'Admin\AdminController@home')->name('admin.index');

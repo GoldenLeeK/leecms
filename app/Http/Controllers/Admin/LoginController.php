@@ -24,13 +24,18 @@ class LoginController extends Controller
         return Auth::guard('admin');
     }
 
-    public function showLoginForm()
+    public function showLoginForm(Request $request)
     {
-        return view('admin.login');
+        return view('Admin.login.login');
     }
 
     public function loggedOut(Request $request)
     {
         return redirect(route('admin.login'));
+    }
+
+    public function username()
+    {
+        return 'name';
     }
 }
