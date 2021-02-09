@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -14,16 +15,17 @@ class AdminController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('Admin.admin.index');
+        $admin       = Auth::guard('admin')->user();
+        $permissions =  Permission::all();
+        return view('Admin.admin.index', compact('permissions'));
     }
 
     public function home()
     {
         return view('Admin.admin.home');
     }
-
 
 
 }

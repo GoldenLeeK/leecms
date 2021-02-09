@@ -21,8 +21,8 @@ class SeedRolesAndPermoissionsData extends Migration
         //需要清除缓存，否则会报错
         app(PermissionRegistrar::class)->forgetCachedPermissions();
         //创建权限
-        Permission::create(['name' => 'manage_users', 'guard_name' => 'admin', 'title' => '用户管理', 'is_hidden' => 0]);
-        Permission::create(['name' => 'manage_permissions', 'guard_name' => 'admin', 'title' => '权限管理', 'is_hidden' => 0]);
+        Permission::create(['name' => 'manage_users', 'guard_name' => 'admin', 'title' => '用户管理', 'icon' => '&#xe6b8;', 'is_hidden' => 0]);
+        Permission::create(['name' => 'manage_permissions', 'guard_name' => 'admin', 'title' => '权限管理', 'icon' => '&#xe6b8;', 'is_hidden' => 0]);
 
         //创建站长角色
         $founder = Role::create(['name' => 'Founder', 'guard_name' => 'admin']);
